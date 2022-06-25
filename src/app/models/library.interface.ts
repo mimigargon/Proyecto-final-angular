@@ -31,7 +31,7 @@ export interface ImageInterface {
 
 export interface BooksGalleryInterface {
     title: string;
-    gallery: ImageInterface[];
+    gallery: ImageInterface;
     text: string,
     reservation: string,
 }

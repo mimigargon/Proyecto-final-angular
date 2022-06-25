@@ -1,0 +1,14 @@
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+    height: 60vh;
+  
+    img {
+      width: 45%;
+      border-radius: 20px;
+    }
+  }

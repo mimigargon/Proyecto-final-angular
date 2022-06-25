@@ -46,7 +46,7 @@ public BASEURL: string = "http://localhost:3000/library"
     return this.httpClient.delete(`${this.BASEURL}/${bookID}`)
   }
 
-  public putComic(bookID: any, editedBook: any) {
+  public putBook(bookID: any, editedBook: any) {
     return this.httpClient.put(`${this.BASEURL}/${bookID}`, editedBook)
   }
 
