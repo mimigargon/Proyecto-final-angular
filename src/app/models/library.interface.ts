@@ -7,6 +7,17 @@ export interface LibraryInterface {
     publisher: string;
     reservation: boolean;
 }
+// export interface UserInterface {
+
+//     id: number;
+//     username: string;
+//     password: string;
+//     books: [LibraryInterface];
+//     member: number;
+//     reservation: number;
+// }
+  
+
 
     
       
