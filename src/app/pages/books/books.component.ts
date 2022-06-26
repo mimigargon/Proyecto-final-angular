@@ -1,7 +1,8 @@
+import { UpdatesInterface } from './../../models/library.interface';
 import { Router } from '@angular/router';
 import { LibraryService } from 'src/app/services/library.service';
 import { Component, OnInit } from '@angular/core';
-import { BooksGalleryInterface} from 'src/app/models/library.interface';
+
 
 @Component({
   selector: 'app-books',
@@ -9,7 +10,7 @@ import { BooksGalleryInterface} from 'src/app/models/library.interface';
   styleUrls: ['./books.component.scss']
 })
 export class BooksComponent implements OnInit {
-public bookList : BooksGalleryInterface []=[];
+public bookList : UpdatesInterface []=[];
   constructor(private libraryService:LibraryService , private router: Router) { }
 
   ngOnInit(): void {

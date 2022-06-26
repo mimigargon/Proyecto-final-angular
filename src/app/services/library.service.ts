@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LibraryService {
-public BASEURL: string = "http://localhost:3000/library"
+public BASEURL: string = "http://localhost:3000/books"
   constructor(private httpClient: HttpClient) { }
 
   public bookData = {
@@ -15,7 +15,7 @@ public BASEURL: string = "http://localhost:3000/library"
     cover: "",
     genre: "",
     publisher: "",
-    reservation: "", 
+    reservation: ""
   }
 
   public clearBook () {
@@ -36,6 +36,8 @@ public BASEURL: string = "http://localhost:3000/library"
 
   public getBooks () {
     return this.httpClient.get(this.BASEURL);
+
+    
   }
 
   public postBook(newBook: any) {

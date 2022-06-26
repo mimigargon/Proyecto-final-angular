@@ -4,8 +4,8 @@
       <!-- Intentad componentizar este figure para utilizar solamente un <app-figure> en vez de todo este codigo -->
       <figure *ngFor="let book of bookList">
         <h4>{{ book.title }}</h4>
-        <h5>{{ book.text }}</h5>
-        <img src="{{ book.gallery.src }}" alt="{{ book.gallery.alt}}" />
+        <h5>{{ book.author}}</h5>
+        <img src="{{ book.cover }}" alt="{{ book.title}}" />
         <p>Company: {{ book.reservation}}</p>
         <button (click)="catchBook(book)">Edit</button>
       </figure>
