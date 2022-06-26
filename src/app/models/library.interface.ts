@@ -14,7 +14,7 @@ export interface UserInterface {
     password: string,
     books: [], 
     member: string, 
-    reservations: string
+    reservations: boolean,
 }
 
 export interface HomeInterface {
@@ -33,7 +33,7 @@ export interface BooksGalleryInterface {
     title: string;
     gallery: ImageInterface;
     text: string,
-    reservation: string,
+    reservation: boolean,
 }
 
 export interface LinkInterface {

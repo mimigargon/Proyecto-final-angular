@@ -21,10 +21,13 @@ public newBook = this.libraryService.bookData;
     author: [this.newBook.author, [Validators.required, Validators.minLength(3)]],
     cover: [this.newBook.cover, [Validators.required]],
     genre : [this.newBook.genre, [Validators.required, Validators.minLength(1)]],
-    publisher: [this.newBook.publisher, [Validators.required, Validators.minLength(4)]]
+    publisher: [this.newBook.publisher, [Validators.required, Validators.minLength(4)]],
+    reservation: [this.newBook.reservation, [Validators.required]]
   });
   this.bookForm.valueChanges.subscribe((changes) => {
     this.newBook = changes;
+    console.log(this.newBook);
+    
   })
 }
 public onSubmit() {

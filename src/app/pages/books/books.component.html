@@ -1,14 +1,14 @@
 <section>
     <h2>Books</h2>
     <div *ngIf="bookList.length">
-      <!-- Intentad componentizar este figure para utilizar solamente un <app-figure> en vez de todo este codigo -->
       <figure *ngFor="let book of bookList">
         <h4>{{ book.title }}</h4>
         <h5>{{ book.author}}</h5>
         <img src="{{ book.cover }}" alt="{{ book.title}}" />
-        <p>Company: {{ book.reservation}}</p>
+        <p *ngIf="book.reservation">Disponibilidad: Disponible</p>
+        <p *ngIf="!book.reservation">Disponibilidad: Alquilado</p>
         <button (click)="catchBook(book)">Edit</button>
       </figure>
     </div>
   </section>
-  <!-- jdbfshkfshgjkshdfg -->
+ 

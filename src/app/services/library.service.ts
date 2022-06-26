@@ -15,7 +15,7 @@ public BASEURL: string = "http://localhost:3000/books"
     cover: "",
     genre: "",
     publisher: "",
-    reservation: ""
+    reservation: false,
   }
 
   public clearBook () {
@@ -26,7 +26,7 @@ public BASEURL: string = "http://localhost:3000/books"
     cover: "",
     genre: "",
     publisher: "",
-    reservation: "", 
+    reservation: false, 
     }
   }
 
