@@ -22,8 +22,8 @@
       <input formControlName="bookstate" id="bookstate" type="range" min="0" max="100" />
       <label for="reservation">Disponibilidad</label>
       <select formControlName="reservation" id="reservation" >
-        <option value="1">Disponible</option>
-        <option value="2">Alquilado</option>
+        <option value="true">Disponible</option>
+        <option value="false">Alquilado</option>
         </select>
       <button *ngIf="bookID !== ''" type="submit">Editar</button>
       <button *ngIf="bookID === ''" type="submit">Crear</button>
