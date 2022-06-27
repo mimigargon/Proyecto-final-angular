@@ -4,21 +4,21 @@ nav {
       display: flex;
       justify-content: space-around;
       align-items: center;
-  
+      font-size: 20px;  
       a {
         transition: all 0.3s;
         text-transform: uppercase;
         &:hover {
-          color: red;
+          color: rgb(99, 99, 99);
         }
       }
   
       img{
-          height: 80px;
-          width: auto;
+          height: 50px;
+          width: 50px;
           cursor: pointer;
           transition: all 0.3s;
-          filter: invert(90%);
+
   
           &:hover{
               transform: scale(1.1);

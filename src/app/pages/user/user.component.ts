@@ -1,4 +1,6 @@
+import { UserInterface } from './../../models/library.interface';
 import { Component, OnInit } from '@angular/core';
+import { LibraryService } from 'src/app/services/library.service';
 
 @Component({
   selector: 'app-user',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
+   public user!: UserInterface;
 
-  constructor() { }
+  constructor(private libraryService: LibraryService, 
+    ) { }
 
   ngOnInit(): void {
   }
