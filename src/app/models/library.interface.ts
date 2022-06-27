@@ -5,7 +5,7 @@ export interface UpdatesInterface {
     cover: string;
     genre: string;
     publisher: string;
-    reservation: boolean;
+    reservation: string;
 }
 
 export interface UserInterface {
@@ -14,7 +14,7 @@ export interface UserInterface {
     password: string,
     books: [], 
     member: string, 
-    reservations: boolean,
+    reservations: string,
 }
 
 export interface HomeInterface {
@@ -33,7 +33,7 @@ export interface BooksGalleryInterface {
     title: string;
     gallery: ImageInterface;
     text: string,
-    reservation: boolean,
+    reservation: string,
 }
 
 export interface LinkInterface {
