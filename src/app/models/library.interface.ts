@@ -47,7 +47,7 @@ export interface LinkInterface {
 
 export interface FooterInterface {
     logo: ImageInterface,
-    links: LinkInterface[],
+    text: string,
 }
     
       
