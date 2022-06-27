@@ -11,6 +11,7 @@ import { UserComponent } from './pages/user/user.component';
 import { UpdatesComponent } from './pages/updates/updates.component';
 import { NavComponent } from './core/nav/nav.component';
 import { FooterComponent } from './core/footer/footer.component';
+import { AforoComponent } from './pages/aforo/aforo.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FooterComponent } from './core/footer/footer.component';
     UpdatesComponent,
     NavComponent,
     FooterComponent,
+    AforoComponent,
   ],
   imports: [
     BrowserModule,

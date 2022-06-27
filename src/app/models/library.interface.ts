@@ -5,17 +5,20 @@ export interface UpdatesInterface {
     cover: string;
     genre: string;
     publisher: string;
-    reservation: boolean;
+    reservation: string;
 }
 
 
 export interface UserInterface {
     id: number,
+    name: string,
+    email: string,
+    phone: string,
     username: string,
     password: string,
-    books: [], 
-    member: string, 
-    reservations: string
+    repassword: string,
+    books: string[], 
+    
 }
 
 export interface HomeInterface {
@@ -32,7 +35,7 @@ export interface ImageInterface {
 
 export interface BooksGalleryInterface {
     title: string;
-    gallery: ImageInterface[];
+    gallery: ImageInterface;
     text: string,
     reservation: string,
 }
@@ -45,7 +48,7 @@ export interface LinkInterface {
 
 export interface FooterInterface {
     logo: ImageInterface,
-    links: LinkInterface[],
+    text: string,
 }
     
       

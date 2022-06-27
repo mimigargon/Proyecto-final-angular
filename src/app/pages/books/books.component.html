@@ -1,1 +1,14 @@
-<p>books works!</p>
+<section>
+    <h2>Books</h2>
+    <div *ngIf="bookList.length">
+      <figure *ngFor="let book of bookList">
+        <h4>{{ book.title }}</h4>
+        <h5>{{ book.author}}</h5>
+        <img src="{{ book.cover }}" alt="{{ book.title}}" />
+        <p *ngIf="book.reservation === 'true'">Disponibilidad: Disponible</p>
+        <p *ngIf="book.reservation === 'false'">Disponibilidad: Alquilado</p>
+        <button (click)="catchBook(book)">Edit</button>
+      </figure>
+    </div>
+  </section>
+ 
