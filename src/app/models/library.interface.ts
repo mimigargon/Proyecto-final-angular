@@ -7,16 +7,6 @@ export interface UpdatesInterface {
     publisher: string;
     reservation: boolean;
 }
-// export interface UserInterface {
-
-//     id: number;
-//     username: string;
-//     password: string;
-//     books: [LibraryInterface];
-//     member: number;
-//     reservation: number;
-// }
-  
 
 
 export interface UserInterface {
