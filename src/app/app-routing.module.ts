@@ -1,7 +1,9 @@
+
 import { UserComponent } from './pages/user/user.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BooksComponent } from './pages/books/books.component';
 import { UpdatesComponent } from './pages/updates/updates.component';
+import { AforoComponent} from './pages/aforo/aforo.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -17,6 +19,9 @@ const routes: Routes = [
   },
   {
     path: "user", component: UserComponent
+  },
+  {
+    path : "aforo", component: AforoComponent
   }
 ];
 

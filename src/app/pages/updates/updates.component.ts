@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./updates.component.scss']
 })
 export class UpdatesComponent implements OnInit {
-//public submitted : boolean = false;
+//public submitted : boolean = false;git 
 public bookForm!: FormGroup;
 public bookID = this.libraryService.bookData.id;
 public newBook = this.libraryService.bookData;
