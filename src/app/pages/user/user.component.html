@@ -1,3 +1,23 @@
-<p>user works!!</p>
+<h2>Usuarios</h2>
+<section>
+  <form novalidate [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <label for="name">Nombre</label>
+    <input type="text" id="name" formControlName="name"/>
+    <label for="email">Email</label>
+    <input type="text" id="email" formControlName="email"/>
+    <label for="phone">Teléfono</label>
+    <input type="text" id="phone" formControlName="phone"/>
+    <label for="username">Username</label>
+    <input type="text" id="username" formControlName="username"/>
+    <label for="password">Password</label>
+    <input type="text" id="password" formControlName="password"/>
+    <label for="repassword">Repeat Password</label>
+    <input type="text" id="repassword" formControlName="repassword"/>
+
+    <button *ngIf="userID !== ''" type="submit">Editar</button>
+    <button *ngIf="userID === ''" type="submit">Crear</button>
+    <button *ngIf="userID !== ''" (click)="delete()">Eliminar</button>
+  </form>
+</section>
  
 

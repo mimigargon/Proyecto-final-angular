@@ -10,11 +10,14 @@ export interface UpdatesInterface {
 
 export interface UserInterface {
     id: number,
+    name: string,
+    email: string,
+    phone: string,
     username: string,
     password: string,
-    books: [], 
-    member: string, 
-    reservations: string,
+    repassword: string,
+    books: string[], 
+    
 }
 
 export interface HomeInterface {

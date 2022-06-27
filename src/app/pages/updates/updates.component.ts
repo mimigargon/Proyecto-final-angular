@@ -35,7 +35,7 @@ public onSubmit() {
   if (this.bookID !== "") {
 
     this.libraryService.putBook(this.bookID, this.newBook).subscribe();
-    alert("book saved")
+    alert("Book saved")
   } else {
 
     this.libraryService.postBook(this.newBook).subscribe();

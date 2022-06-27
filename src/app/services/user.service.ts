@@ -10,21 +10,26 @@ public BASEURL: string = "http://localhost:3000/user"
 
   public userData = {
     id: "",
+    name: "",
+    email: "",
+    phone: "",
     username: "",
     password: "",
+    repassword: "",
     books: [],
-    member: "",
-    reservations: ""
+  
   }
 
   public clearUser () {
     this.userData = {
       id: "",
-    username: "",
-    password: "",
-    books: [],
-    member: "",
-    reservations: ""
+      name: "",
+      email: "",
+      phone: "",
+      username: "",
+      password: "",
+      repassword: "",
+      books: [],
     }
   }
 
