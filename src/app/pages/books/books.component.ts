@@ -16,6 +16,7 @@ public bookList : UpdatesInterface []=[];
   ngOnInit(): void {
   this.libraryService.getBooks().subscribe((data:any)=>{
 this.bookList = data;
+console.log(data);
   })
   }
   public catchBook(book: any){

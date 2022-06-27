@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { LibraryService } from 'src/app/services/library.service';
+import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,17 +11,17 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   public submitted = false;
   public bookForm!: FormGroup;
-  public userId = this.libraryService.userData.username;
-  public newUser = this.libraryService.userData;
+  public userId = this.userService.userData.username;
+  public newUser = this.userService.userData;
 
   constructor(private formBuilder: FormBuilder,
-     private libraryService: LibraryService,
+     private userService: UserService,
      private router: Router) 
     
      { }
 
   ngOnInit(): void {
-    this.libraryService.clearUser();
+    this.userService.clearUser();
     this.bookForm = this.formBuilder.group({
       
       username: [this.newUser.username, [Validators.required, Validators.minLength(4)]],
@@ -37,10 +37,10 @@ export class HomeComponent implements OnInit {
   
   public onSubmit() {
     if(this.userId !== ""){
-      this.libraryService.putUser(this.userId, this.newUser).subscribe();
+      this.userService.putUser(this.userId, this.newUser).subscribe();
       alert("user updated");
     }else{
-      this.libraryService.postUser(this.newUser).subscribe();
+      this.userService.postUser(this.newUser).subscribe();
       alert("user saved")
     }
 
@@ -50,8 +50,8 @@ export class HomeComponent implements OnInit {
   }
 
   public delete() {
-    this.libraryService.deleteUser(this.userId).subscribe();
-    this.libraryService.clearBook();
+    this.userService.deleteUser(this.userId).subscribe();
+    this.userService.clearUser();
     alert("user deleted");
     this.router.navigate(["/user"])
   }

@@ -2,21 +2,15 @@
     <h2>BOOKS</h2>
     <div *ngIf="bookList.length">
       <figure *ngFor="let book of bookList">
-<<<<<<< HEAD
-        <h4>{{ book.title }}</h4>
-        <h5>{{ book.author}}</h5>
-        <img src="{{ book.cover }}" alt="{{ book.title}}" />
-        <p *ngIf="book.reservation === 'true'">Disponibilidad: Disponible</p>
-        <p *ngIf="book.reservation === 'false'">Disponibilidad: Alquilado</p>
-=======
         <ul> 
           <h4>{{ book.title }}</h4>
-          <h5>{{ book.author}}</h5>
+          <h5>{{ book.author }}</h5>
           <li class='book'>         
           <img src="{{ book.cover }}" alt="{{ book.title}}" />
-          <p>Company: {{ book.reservation}} </p>
         </li>
->>>>>>> home
+        <p>Editorial: {{book.publisher}}</p>
+        <p *ngIf="book.reservation === 'true'">Disponibilidad: Disponible</p>
+        <p *ngIf="book.reservation === 'false'">Disponibilidad: Alquilado</p>
         <button (click)="catchBook(book)">Edit</button>
         </ul>
         </figure>
