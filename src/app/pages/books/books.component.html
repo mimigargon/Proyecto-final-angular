@@ -5,8 +5,8 @@
         <h4>{{ book.title }}</h4>
         <h5>{{ book.author}}</h5>
         <img src="{{ book.cover }}" alt="{{ book.title}}" />
-        <p *ngIf="book.reservation">Disponibilidad: Disponible</p>
-        <p *ngIf="!book.reservation">Disponibilidad: Alquilado</p>
+        <p *ngIf="book.reservation === 'true'">Disponibilidad: Disponible</p>
+        <p *ngIf="book.reservation === 'false'">Disponibilidad: Alquilado</p>
         <button (click)="catchBook(book)">Edit</button>
       </figure>
     </div>
