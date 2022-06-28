@@ -37,6 +37,10 @@ public BASEURL: string = "http://localhost:3000/books"
     this.bookData = item;
   }
 
+  public showBook(item: any){
+    this.bookData = item;
+  }
+
   public getBooks () {
     return this.httpClient.get(this.BASEURL);
  

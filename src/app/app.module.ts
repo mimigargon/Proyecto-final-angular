@@ -12,6 +12,7 @@ import { UpdatesComponent } from './pages/updates/updates.component';
 import { NavComponent } from './core/nav/nav.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { AforoComponent } from './pages/aforo/aforo.component';
+import { BookdetailComponent } from './pages/bookdetail/bookdetail.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AforoComponent } from './pages/aforo/aforo.component';
     NavComponent,
     FooterComponent,
     AforoComponent,
+    BookdetailComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,16 @@ export interface UpdatesInterface {
     state: number;
 }
 
+export interface DetailInterface {
+    id: number;
+    title: string;
+    author: string;
+    cover: string;
+    genre: string;
+    publisher: string;
+    reservation: string;
+    state: number;
+}
 
 export interface UserInterface {
     id: number,
