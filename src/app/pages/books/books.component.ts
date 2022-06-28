@@ -24,6 +24,11 @@ console.log(data);
     this.router.navigate(['/updates'])
   }
 
+  public bookDetail(book: any){
+    this.libraryService.showBook(book);
+    this.router.navigate(['/detail']);
+  }
+
 
 
 

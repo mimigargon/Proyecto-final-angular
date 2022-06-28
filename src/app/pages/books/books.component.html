@@ -6,7 +6,7 @@
           <h4>{{ book.title }}</h4>
           <h5>{{ book.author }}</h5>
           <li class='book'>         
-          <img src="{{ book.cover }}" alt="{{ book.title}}" />
+          <img (click)="bookDetail(book)" src="{{ book.cover }}" alt="{{ book.title}}" />
         </li>
         <p>Editorial: {{book.publisher}}</p>
         <p *ngIf="book.reservation === 'true'">Disponibilidad: Disponible</p>
