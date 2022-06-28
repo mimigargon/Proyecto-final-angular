@@ -134,7 +134,7 @@ section{
             background-color: rgba(245, 245, 245, 0.158);
             border-radius: 10px;
             width: 200px;   
-            height: 400px;
+            height: 444px;
             
             img{
                 width: fit;
@@ -151,4 +151,10 @@ section{
             
         }
     }
+}
+.malestado{
+  color: red;
+}
+.buenestado{
+  color: green;
 }

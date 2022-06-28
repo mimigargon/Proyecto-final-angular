@@ -11,6 +11,10 @@
         <p>Editorial: {{book.publisher}}</p>
         <p *ngIf="book.reservation === 'true'">Disponibilidad: Disponible</p>
         <p *ngIf="book.reservation === 'false'">Disponibilidad: Alquilado</p>
+        <p class="malestado" *ngIf="book.state <= 49 ">Libro en mal estado</p>
+        <p class="buenestado" *ngIf="book.state >= 49 ">Libro buen estado</p>
+
+        
         <button (click)="catchBook(book)">Edit</button>
         </ul>
         </figure>

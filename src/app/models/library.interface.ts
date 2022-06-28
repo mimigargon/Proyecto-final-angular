@@ -6,6 +6,7 @@ export interface UpdatesInterface {
     genre: string;
     publisher: string;
     reservation: string;
+    state: number;
 }
 
 
