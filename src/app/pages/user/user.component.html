@@ -1,23 +1,43 @@
 <h2>Usuarios</h2>
-<section>
-  <form novalidate [formGroup]="userForm" (ngSubmit)="onSubmit()">
-    <label for="name">Nombre</label>
-    <input type="text" id="name" formControlName="name"/>
-    <label for="email">Email</label>
-    <input type="text" id="email" formControlName="email"/>
-    <label for="phone">Teléfono</label>
-    <input type="text" id="phone" formControlName="phone"/>
-    <label for="username">Username</label>
-    <input type="text" id="username" formControlName="username"/>
-    <label for="password">Password</label>
-    <input type="text" id="password" formControlName="password"/>
-    <label for="repassword">Repeat Password</label>
-    <input type="text" id="repassword" formControlName="repassword"/>
+<form novalidate (ngSubmit)="onSubmit()" [formGroup]="userForm">
+  <fieldset>
+    <label for="username">Username:</label>
+    <input type="text" id="username" formControlName="username" />
+    <div
+      *ngIf="
+        !userForm.get('username')?.valid &&
+        (userForm.get('username')?.dirty || submitted)
+      "
+    >
+      Username tiene que tener un mínimo de 3 caracteres
+    </div>
+  </fieldset>
+  <fieldset>
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password" />
+    <div
+      *ngIf="
+        !userForm.get('password')?.valid &&
+        (userForm.get('password')?.dirty || submitted)
+      "
+    >
+     Password tiene que tener un mínimo de 8 caracteres, una mayúscula, una mínuscula, un número y un cáracter especial
+    </div>
+  </fieldset>
+  <fieldset>
+    <label for="repassword">Repeat Password:</label>
+    <input type="password" id="repassword" formControlName="repassword" />
+    <div
+      *ngIf="
+        !userForm.get('repassword')?.valid &&
+        (userForm.get('repassword')?.dirty || submitted)
+      "
+    >
+     Este campo tiene que coincidir con la contraseña original
+    </div>
+  </fieldset>
+  <button type="submit" [disabled]="!userForm.valid">Register</button>
+</form>
 
-    <button *ngIf="userID !== ''" type="submit">Editar</button>
-    <button *ngIf="userID === ''" type="submit">Crear</button>
-    <button *ngIf="userID !== ''" (click)="delete()">Eliminar</button>
-  </form>
-</section>
  
 

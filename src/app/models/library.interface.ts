@@ -21,14 +21,9 @@ export interface DetailInterface {
 }
 
 export interface UserInterface {
-    id: number,
-    name: string,
-    email: string,
-    phone: string,
     username: string,
     password: string,
     repassword: string,
-    books: string[], 
     
 }
 
