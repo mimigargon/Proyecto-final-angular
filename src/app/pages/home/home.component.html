@@ -1,11 +1,11 @@
 <h2>Login</h2>
 <section>
-  <form novalidate [formGroup]="bookForm" (ngSubmit)="onSubmit()">
-    <label for="user">username</label>
-    <input type="text" id="user" formControlName="user" />
+  <form novalidate [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <label for="username">username</label>
+    <input type="text" id="username" formControlName="username" />
     <label for="password">password</label>
     <input type="password" id="password" formControlName="password" />
 
-    <button *ngIf="userId === ''" type="submit">Login</button>
+    <button  type="submit">Login</button>
   </form>
 </section>

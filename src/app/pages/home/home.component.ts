@@ -1,7 +1,9 @@
+import  Swal from 'sweetalert2';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { UserInterface } from 'src/app/models/library.interface';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +12,10 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   public submitted = false;
-  public bookForm!: FormGroup;
+  public userForm!: FormGroup;
   public userId = this.userService.userData.username;
   public newUser = this.userService.userData;
-
+  public userList : UserInterface []=[];
   constructor(private formBuilder: FormBuilder,
      private userService: UserService,
      private router: Router) 
@@ -21,8 +23,12 @@ export class HomeComponent implements OnInit {
      { }
 
   ngOnInit(): void {
-    this.userService.clearUser();
-    this.bookForm = this.formBuilder.group({
+    this.userService.getUser().subscribe((data:any)=>{
+      this.userList = data;
+      // console.log(this.userList);
+    });
+   
+    this.userForm = this.formBuilder.group({
       
       username: [this.newUser.username, [Validators.required, Validators.minLength(4)]],
       password: [this.newUser.password, [Validators.required, Validators.minLength(4)]],
@@ -30,29 +36,27 @@ export class HomeComponent implements OnInit {
     });
 
 
-    this.bookForm.valueChanges.subscribe((changes)=> {
+    this.userForm.valueChanges.subscribe((changes)=> {
       this.newUser = changes;
     })
   }
+
+  
   
   public onSubmit() {
-    if(this.userId !== ""){
-      this.userService.putUser(this.userId, this.newUser).subscribe();
-      alert("user updated");
+    const result = this.userList.find(
+      (user) =>
+        user.username === this.newUser.username && user.password === this.newUser.password
+    );
+    if(result){
+      this.router.navigate(["/user"])
     }else{
-      this.userService.postUser(this.newUser).subscribe();
-      alert("user saved")
+  
+    this.userForm.reset();
+    Swal.fire("Usuario y contraseña incorrectas")
     }
-
-    this.bookForm.reset();
-    this.router.navigate(["/user"])
     
   }
 
-  public delete() {
-    this.userService.deleteUser(this.userId).subscribe();
-    this.userService.clearUser();
-    alert("user deleted");
-    this.router.navigate(["/user"])
-  }
+
 }
