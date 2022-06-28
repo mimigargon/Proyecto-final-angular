@@ -24,7 +24,7 @@ public newBook = this.libraryService.bookData;
     genre : [this.newBook.genre, [Validators.required, Validators.minLength(1)]],
     publisher: [this.newBook.publisher, [Validators.required, Validators.minLength(4)]],
     reservation: [this.newBook.reservation, [Validators.required,Validators.minLength(1)]],
-    state: [this.newBook.state],
+    state: [this.newBook.state, [Validators.required ]],
   });
   this.bookForm.valueChanges.subscribe((changes) => {
     this.newBook = changes;
@@ -32,20 +32,24 @@ public newBook = this.libraryService.bookData;
     
   })
 }
-public onSubmit() {
+public   onSubmit() {
   
   if (this.bookID !== "") {
+    console.log(this.newBook);
+    
 
-    this.libraryService.putBook(this.bookID, this.newBook).subscribe();
+     this.libraryService.putBook(this.bookID, this.newBook).subscribe();
     Swal.fire('Book modify');
   } else {
 
     this.libraryService.postBook(this.newBook).subscribe();
     Swal.fire('Book saved');
   }
-
+setTimeout(() => {
   this.bookForm.reset()
-  this.router.navigate(["/books"])
+  this.router.navigate(["/books"]) 
+}, 275);
+ 
 } 
 public delete() {
  
