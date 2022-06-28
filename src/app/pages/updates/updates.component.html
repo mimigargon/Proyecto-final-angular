@@ -1,4 +1,4 @@
-<h2>Administracion</h2>
+<h2>ADMINISTRACIÓN</h2>
 <section>
     
     <figure>
@@ -6,6 +6,7 @@
       <h5>{{ newBook.author }}</h5>
       <img *ngIf="newBook.cover != ''" src="{{ newBook.cover }}" alt="{{ newBook.title }}" />
       <p *ngIf="newBook.publisher != ''">Publisher: {{ newBook.publisher }}</p>
+      <p *ngIf="newBook.genre != ''">Genre: {{newBook.genre}}</p>
     </figure>
     <form novalidate [formGroup]="bookForm" (ngSubmit)="onSubmit()">
       <label for="title">Title</label>
@@ -19,14 +20,14 @@
       <label for="genre">Genre</label>
       <input type="text" id="genre" formControlName="genre" />
     
-      <label for="state">Estado del libro: deteriorado/nuevo</label>
-      <input formControlName="state" id="state" type="range" min="0" max="100" />
-
       <label for="reservation">Disponibilidad</label>
       <select formControlName="reservation" id="reservation" >
         <option value=true>Disponible</option>
         <option value=false>Alquilado</option>
         </select>
+      <label for="state">Estado del libro: deteriorado/nuevo</label>
+      <input formControlName="state" id="state" type="range" min="0" max="100" />
+
       <button *ngIf="bookID !== ''" type="submit">Editar</button>
       <button *ngIf="bookID === ''" type="submit">Crear</button>
       <button *ngIf="bookID !== ''" (click)="delete()">Eliminar</button>

@@ -1,6 +1,6 @@
-<h2>Usuarios</h2>
+<h2>USUARIOS</h2>
+<section>
 <form novalidate (ngSubmit)="onSubmit()" [formGroup]="userForm">
-  <fieldset>
     <label for="username">Username:</label>
     <input type="text" id="username" formControlName="username" />
     <div
@@ -11,8 +11,6 @@
     >
       Username tiene que tener un mínimo de 3 caracteres
     </div>
-  </fieldset>
-  <fieldset>
     <label for="password">Password:</label>
     <input type="password" id="password" formControlName="password" />
     <div
@@ -23,8 +21,6 @@
     >
      Password tiene que tener un mínimo de 8 caracteres, una mayúscula, una mínuscula, un número y un cáracter especial
     </div>
-  </fieldset>
-  <fieldset>
     <label for="repassword">Repeat Password:</label>
     <input type="password" id="repassword" formControlName="repassword" />
     <div
@@ -35,9 +31,9 @@
     >
      Este campo tiene que coincidir con la contraseña original
     </div>
-  </fieldset>
   <button type="submit" [disabled]="!userForm.valid">Register</button>
 </form>
+</section>
 
  
 

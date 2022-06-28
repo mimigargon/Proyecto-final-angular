@@ -1,11 +1,13 @@
-<h2>Book detail</h2>
+<h2>FICHA DE LIBRO</h2>
 <section>
     <figure>
-      <h2>titulo: {{ newBook.title }}</h2>
-      <h2>autor: {{ newBook.author }}</h2>
-      <img src="{{ newBook.cover }}" alt="book cover"/>   
-      <h2>género: {{ newBook.genre}}</h2>
-      <h2>editorial: {{ newBook.publisher}}</h2>
+      <img src="{{ newBook.cover }}" alt="book cover"/>
+      <div>  
+      <h3>titulo: {{ newBook.title }}</h3>
+      <h3>autor: {{ newBook.author }}</h3>
+      <h3>género: {{ newBook.genre}}</h3>
+      <h3>editorial: {{ newBook.publisher}}</h3>
+    </div> 
     </figure>
    
   </section>
